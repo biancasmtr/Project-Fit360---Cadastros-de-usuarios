@@ -5,38 +5,43 @@
         <article class="media">
             <h3 class="title is-3">Login</h3>
 
-            <div class="field">
-                <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="email" placeholder="Email">
-                    <span class="icon is-small is-left">
-                        <i class="fas fa-envelope"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                        <i class="fas fa-check"></i>
-                    </span>
-                </p>
-            </div>
-            <div class="field">
-                <p class="control has-icons-left">
-                    <input class="input" type="password" placeholder="Password">
-                    <span class="icon is-small is-left">
-                        <i class="fas fa-lock"></i>
-                    </span>
-                </p>
-            </div>
-
-            <div class="field">
-                <div class="control">
-                    <p class="control">
-                        <button class="button is-success" v-html="sucess">
-                        Login
-                        </button>
-                    </p>
-                    <p class="control cadastro">
-                         Não possui cadastro? <a v-html="html"></a>
+            <form class="login"  @submit.prevent="login">
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="email" placeholder="Email" v-model="user.email">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
                     </p>
                 </div>
-            </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" placeholder="Password" v-model="user.password"> 
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <p class="control">
+                            <router-link class="button is-success" type="submit" to="/home">
+                            Entrar
+                            
+                            </router-link>
+                        </p>
+
+
+                    <p class="control cadastro">
+                         Não possui cadastro? <router-link to="/signup">Acesse</router-link>
+                    </p>
+                </div>
+                </div>
+        </form>
         </article>
     </div>
 </div>
@@ -49,14 +54,26 @@ export default {
     name: "login",
     data() {
         return {
-            sucess: '<a href="/#/home">Entrar</a>',
-            html: '<a href="/#/singup">Acesse</a>'
+        user: {
+            email: null,
+            password: null
         }
-    }, 
+    }
+},
     methods: {
-
+        handleSubmit: function () {
+            console.log(this.user)
     },
+    login: function () {
+   const { username, password } = this
+   this.$store.dispatch(AUTH_REQUEST, { username, password }).then(() => {
+     this.$router.push('/')
+   })
+ }
 }
+}
+
+
 </script>
 
 <style scoped>
@@ -77,7 +94,7 @@ export default {
     .media {
         display: block;
         margin: 0 auto;
-        margin-left: 10%;
+        margin-left: 18%;
         margin-right: 10%;
         text-align: center;
     }
@@ -114,7 +131,7 @@ export default {
         }
 
         .media[data-v-26084dc2] {
-            margin-left: 10%;
+            margin-left: 15%;
         }
     }
 
