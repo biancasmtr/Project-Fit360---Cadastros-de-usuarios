@@ -13,7 +13,10 @@ export default {
     Login,
   },
   methods: {
-
+    doSignIn(obj) {
+      // fingir que há uma chamada AJAX
+      window.console.log(obj);
+    }
   }
 }
 </script>

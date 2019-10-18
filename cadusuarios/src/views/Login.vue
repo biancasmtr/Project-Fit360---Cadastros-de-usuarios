@@ -67,10 +67,7 @@ export default {
       submit() {
         this.emit('do-sign-in',this.$data);
       },
-      doSignIn(obj) {
-      // fingir que há uma chamada AJAX
-      window.console.log(obj);
-    }
+
   }
 }
 
