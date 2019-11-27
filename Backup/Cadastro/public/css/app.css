@@ -170,7 +170,7 @@ sup {
 }
 
 a {
-  color: #2e93e6;
+  color: rgba(0, 0, 0, 0.2);
   text-decoration: none;
   background-color: transparent;
 }
@@ -182,7 +182,7 @@ a.a {
 }
 
 a:hover {
-  color: rgba(0, 0, 0, 0.2);
+  color: #0d0758;
   text-decoration: underline;
 }
 
@@ -1626,7 +1626,8 @@ pre code {
 }
 
 .table {
-  width: 100%;
+  width: 95%;
+  margin: auto;
   margin-bottom: 1rem;
   color: #212529;
 }
@@ -1988,8 +1989,7 @@ pre code {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.form-control-detalhes {
-  display: block;
+.form-contr-cnpj {
   width: 50%;
   height: calc(1.6em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
@@ -2002,6 +2002,36 @@ pre code {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control-detalhes {
+  display: block;
+  width: 75%;
+  float: left;
+  height: calc(1.6em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#pesqui {
+  display: block;
+  float: right;
+  width: 15%;
+  margin-right: 15%;
+}
+
+.det {
+  width: 15%;
+  display: block;
+  float: left;
 }
 
 .form-group-detalhes {
@@ -6074,7 +6104,7 @@ a.close.disabled {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 120%;
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;

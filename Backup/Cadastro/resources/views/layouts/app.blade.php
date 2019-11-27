@@ -26,8 +26,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-confirmation/1.0.5/bootstrap-confirmation.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div id="app" style="display: none" >
